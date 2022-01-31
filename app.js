@@ -79,6 +79,7 @@ app.post('/create-preference', async function (req, res) {
                 ],
                 installments: 6
             },
+            notification_url: 'https://webhook.site/38ca49e9-ab65-493a-af82-996e83c600f8',
         }
         const response = await mercadopago.preferences.create(preference)
         return res.json({
