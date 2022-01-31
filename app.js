@@ -26,10 +26,6 @@ app.use(express.static('assets'));
 
 app.use('/assets', express.static(__dirname + '/assets'));
 
-app.get('/', function (req, res) {
-    res.render('home');
-});
-
 app.post('/create-preference', async function (req, res) {
 
     try {
@@ -96,8 +92,12 @@ app.post('/create-preference', async function (req, res) {
 
 });
 
+app.get('/', function (req, res) {
+    res.render('home', { scripts: [{ script: 'https://www.mercadopago.com/v2/security.js', view: 'home' }] });
+});
+
 app.get('/detail', function (req, res) {
-    res.render('detail', req.query);
+    res.render('detail', { ...req.query, scripts: [{ script: 'https://www.mercadopago.com/v2/security.js', view: 'item' }] });
 });
 
 app.get('/success', async function (req, res) {
