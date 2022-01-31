@@ -45,6 +45,7 @@ function checkout(el) {
         })
         .catch(function (e) {
             console.log(e);
+            el.hidden = false
             alert("Unexpected error");
             $('#checkout-btn').attr("disabled", false);
         })
