@@ -44,6 +44,7 @@ function checkout(el) {
             }, 500);
         })
         .catch(function (e) {
+            alert('Ocorreu um erro ao criar preferência')
             console.log(e);
             el.hidden = false
             alert("Unexpected error");

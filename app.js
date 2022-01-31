@@ -107,7 +107,11 @@ app.get('/success', async function (req, res) {
     res.render('success', {
         merchant_order_id: req.query.merchant_order_id,
         payment_type: req.query.payment_type,
+        description: mp.body.description,
         payment_method_id: mp.body.payment_method_id,
+        notification_url: mp.body.notification_url,
+        transaction_amount: mp.body.transaction_amount,
+        email: mp.body.payer.email,
         external_reference: req.query.external_reference,
         payment_id: req.query.payment_id,
     });
@@ -119,7 +123,11 @@ app.get('/failure', async function (req, res) {
     res.render('failure', {
         merchant_order_id: req.query.merchant_order_id,
         payment_type: req.query.payment_type,
+        description: mp.body.description,
         payment_method_id: mp.body.payment_method_id,
+        notification_url: mp.body.notification_url,
+        transaction_amount: mp.body.transaction_amount,
+        email: mp.body.payer.email,
         external_reference: req.query.external_reference,
         payment_id: req.query.payment_id,
     });
@@ -131,7 +139,11 @@ app.get('/pending', async function (req, res) {
     res.render('pending', {
         merchant_order_id: req.query.merchant_order_id,
         payment_type: req.query.payment_type,
+        description: mp.body.description,
         payment_method_id: mp.body.payment_method_id,
+        notification_url: mp.body.notification_url,
+        transaction_amount: mp.body.transaction_amount,
+        email: mp.body.payer.email,
         external_reference: req.query.external_reference,
         payment_id: req.query.payment_id,
     });
